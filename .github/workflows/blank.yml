@@ -11,17 +11,24 @@ jobs:
   build-and-run:
 
     runs-on: ubuntu-latest
-  
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout repository 
-      - uses: actions/checkout@v3
-      
-      # Runs a single command using the runners shell
-      - name: Build docker image 
-        run: docker build -t my-symple-app .
 
-      # Runs a set of commands using the runners shell
-      - name: Run Docker container 
-        run: docker run --rm my-simple-app .
+ 
+
+    steps:
+
+      - name: Checkout repository
+
+        uses: actions/checkout@v3
+
+ 
+
+      - name: Build Docker image
+
+        run: docker build -t my-simple-app .
+
+ 
+
+      - name: Run Docker container
+
+        run: docker run --rm my-simple-app
        
